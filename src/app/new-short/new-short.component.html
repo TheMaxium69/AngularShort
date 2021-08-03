@@ -3,12 +3,12 @@
 <a href="shop" class="btn btn-dark">Retour</a>
 <hr>
 <div class="mb-3">
-  <input class="form-control" placeholder="nom">
+  <input class="form-control" placeholder="nom" #nom>
 </div>
 <div class="mb-3">
-  <input class="form-control" placeholder="taille">
+  <input class="form-control" placeholder="taille" #taille>
 </div>
 <div class="mb-3">
-  <input class="form-control" placeholder="color">
+  <input class="form-control" placeholder="color" #couleur>
 </div>
-<button type="submit" class="btn btn-primary">Submit</button>
+<button (click)="createShort(nom.value, taille.value, couleur.value)" class="btn btn-primary">Submit</button>
