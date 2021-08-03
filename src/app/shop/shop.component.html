@@ -1,6 +1,6 @@
 <p>Tu est dans le shop</p>
 
-<a href="new" class="btn btn-dark">create</a>
+<a [routerLink]="['/new']" class="btn btn-dark">create</a>
 
 <div class="row">
     <div *ngFor="let short of lesShorts" class="card" style="width: 18rem;">
@@ -10,6 +10,7 @@
         <p class="card-text">{{ short.taille }}</p>
         <small class="card-text"> id : {{ short.id }}</small><br>
         <button class="btn btn-danger" (click)="suppr(short.id)">Supprimer</button>
+        <button class="btn btn-success"> Ajoutez au panier</button>
       </div>
     </div>
 </div>

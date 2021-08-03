@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { ShopComponent } from './shop/shop.component';
 import {HttpClientModule} from "@angular/common/http";
 import { NewShortComponent } from './new-short/new-short.component';
+import { PanierComponent } from './panier/panier.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ShopComponent,
-    NewShortComponent
+    NewShortComponent,
+    PanierComponent
   ],
   imports: [
     BrowserModule,
