@@ -1,7 +1,5 @@
 <p>Tu est dans le shop</p>
 
-<button class="btn btn-success" (click)="apiAll()">Ajoutez</button>
-
 <div class="row">
     <div *ngFor="let short of lesShorts" class="card" style="width: 18rem;">
       <div class="card-body">
@@ -9,7 +7,7 @@
         <p class="card-text">{{ short.couleur }}</p>
         <p class="card-text">{{ short.taille }}</p>
         <small class="card-text"> id : {{ short.id }}</small><br>
-        <a href="#" class="btn btn-primary">Suprimer</a>
+        <button class="btn btn-danger" (click)="suppr(short.id)">Supprimer</button>
       </div>
     </div>
 </div>

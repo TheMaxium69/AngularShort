@@ -11,6 +11,10 @@ export class ShopComponent implements OnInit {
   constructor(private httpClient: HttpClient) { }
 
   ngOnInit(): void {
+    this.httpClient.get('http://localhost:8000/shorts')
+      .subscribe(LesShortsReponse => {
+        this.lesShorts = LesShortsReponse;
+      });
   }
 
   lesShortsTest = [
@@ -48,11 +52,8 @@ export class ShopComponent implements OnInit {
 
   lesShorts:any = [];
 
-  apiAll(){
-    this.httpClient.get('http://localhost:8000/shorts')
-      .subscribe(LesShortsReponse => {
-        this.lesShorts.push(LesShortsReponse);
-      });
+  suppr(id:number){
+    this.httpClient.get('http://localhost:8000/short/delete/'+id).subscribe();
   }
 
 }
