@@ -1,1 +1,31 @@
 <p>Tu est dans le shop</p>
+
+<button class="btn btn-success" (click)="apiAll()">Ajoutez</button>
+
+<div class="row">
+    <div *ngFor="let short of lesShorts" class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{ short.name}}</h5>
+        <p class="card-text">{{ short.couleur }}</p>
+        <p class="card-text">{{ short.taille }}</p>
+        <small class="card-text"> id : {{ short.id }}</small><br>
+        <a href="#" class="btn btn-primary">Suprimer</a>
+      </div>
+    </div>
+</div>
+
+
+<hr>
+<h2>Sans Requete</h2>
+
+<div class="row">
+  <div *ngFor="let short of lesShortsTest" class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{ short.name}}</h5>
+      <p class="card-text">{{ short.couleur }}</p>
+      <p class="card-text">{{ short.taille }}</p>
+      <small class="card-text"> id : {{ short.id }}</small><br>
+      <a href="#" class="btn btn-primary">Suprimer</a>
+    </div>
+  </div>
+</div>

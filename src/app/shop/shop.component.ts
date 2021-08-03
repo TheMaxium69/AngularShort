@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-shop',
@@ -7,12 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShopComponent implements OnInit {
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
   ngOnInit(): void {
   }
 
-  shortsTest = [
+  lesShortsTest = [
     {
       "id": 1,
       "name": "jesuisunnom",
@@ -45,5 +46,13 @@ export class ShopComponent implements OnInit {
     }
   ];
 
+  lesShorts:any = [];
+
+  apiAll(){
+    this.httpClient.get('http://localhost:8000/shorts')
+      .subscribe(LesShortsReponse => {
+        this.lesShorts.push(LesShortsReponse);
+      });
+  }
 
 }
