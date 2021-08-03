@@ -11,10 +11,7 @@ export class ShopComponent implements OnInit {
   constructor(private httpClient: HttpClient) { }
 
   ngOnInit(): void {
-    this.httpClient.get('http://localhost:8000/shorts')
-      .subscribe(LesShortsReponse => {
-        this.lesShorts = LesShortsReponse;
-      });
+    this.findAll()
   }
 
   lesShortsTest = [
@@ -52,8 +49,18 @@ export class ShopComponent implements OnInit {
 
   lesShorts:any = [];
 
+  findAll(){
+    this.httpClient.get('http://localhost:8000/shorts')
+      .subscribe(LesShortsReponse => {
+        this.lesShorts = LesShortsReponse;
+      });
+  }
+
   suppr(id:number){
-    this.httpClient.get('http://localhost:8000/short/delete/'+id).subscribe();
+    this.httpClient.delete('http://localhost:8000/short/delete/'+id).subscribe(data => {
+      console.log(data);
+      this.findAll();
+    });
   }
 
 }
