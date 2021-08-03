@@ -9,16 +9,17 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>danemark</td>
+    <tr *ngFor="let short of panier">
+      <td>{{ short.name }}</td>
       <td>12</td>
       <td>2</td>
       <td><button class="btn btn-danger">Retirez</button></td>
-    </tr><tr>
-      <td></td>
-      <td></td>
+    </tr>
+    <tr>
       <td>Totale</td>
       <td>1230 €</td>
+      <td></td>
+      <td></td>
     </tr>
   </tbody>
 </table>
